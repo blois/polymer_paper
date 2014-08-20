@@ -1,0 +1,7 @@
+{
+  "name": "paper_app",
+  "version": "0.0.0",
+  "devDependencies": {
+    "vulcanize": ">0.0"
+  }
+}

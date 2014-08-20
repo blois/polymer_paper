@@ -1,0 +1,32 @@
+<!doctype html>
+
+<head>
+  <meta charset='utf-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <title>index</title>
+
+  <script src='components/platform/platform.js'></script>
+  <link rel='import' href='components/polymer/polymer.html'>
+  <link rel='import' href='app-view.html'>
+
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      background: #f7f7f7;
+    }
+  </style>
+</head>
+
+<body unresolved>
+  <app-view></app-view>
+
+  <script>
+  window.Polymer.whenPolymerReady(function() {
+    document.body.appendChild(document.createTextNode("Load time: " + window.performance.now()));
+    var timeFromInteractive = window.performance.now() + window.performance.timing.navigationStart - window.performance.timing.domInteractive;
+    document.body.appendChild(document.createElement('br'));
+    document.body.appendChild(document.createTextNode("Delay after transition to interactive: " + timeFromInteractive));
+  });
+  </script>
+</body>
